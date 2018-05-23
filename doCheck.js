@@ -8,11 +8,13 @@
                 $("div#valItem1Div img").attr("src", "red.jpg");
                 $("div#valItem1Div span").text("Fail, Minimum Length. ");
                 $("div#valItem1Div").attr("data-status", "1");
+                $("#stateannounce p").empty();
             } else if (x.length >= 5 && $("div#valItem1Div").attr("data-status") != "2") {
                 $("div#valItem1Div img").attr("alt", "Pass, Minimum Length. ");
                 $("div#valItem1Div img").attr("src", "green.jpg");
                 $("div#valItem1Div span").text("Pass, Minimum Length. ");
                 $("div#valItem1Div").attr("data-status", "2");
+                $("#stateannounce2 p").empty();
             }
 
             //check 2 - max length
@@ -21,11 +23,13 @@
                 $("div#valItem2Div img").attr("src", "red.jpg");
                 $("div#valItem2Div span").text("Fail, Maximum Length. ");
                 $("div#valItem2Div").attr("data-status", "1");
+                $("#stateannounce p").empty();
             } else if (x.length <= 32 && $("div#valItem2Div").attr("data-status") != "2") {
                 $("div#valItem2Div img").attr("alt", "Pass, Maximum Length. ");
                 $("div#valItem2Div img").attr("src", "green.jpg");
                 $("div#valItem2Div span").text("Pass, Maximum Length. ");
                 $("div#valItem2Div").attr("data-status", "2");
+                $("#stateannounce2 p").empty();
             }
 
             //check 3 - minimum one letter 
@@ -36,11 +40,13 @@
                 $("div#valItem3Div img").attr("src", "red.jpg");
                 $("div#valItem3Div span").text("Fail, At Least One Letter. ");
                 $("div#valItem3Div").attr("data-status", "1");
+                $("#stateannounce p").empty();
             } else if (ccc == true && $("div#valItem3Div").attr("data-status") != "2") {
                 $("div#valItem3Div img").attr("alt", "Pass, At Least One Letter. ");
                 $("div#valItem3Div img").attr("src", "green.jpg");
                 $("div#valItem3Div span").text("Pass, At Least One Letter. ");
                 $("div#valItem3Div").attr("data-status", "2");
+                $("#stateannounce2 p").empty();
             }
 
             //check 4 - special characters
@@ -52,11 +58,13 @@
                 $("div#valItem4Div img").attr("src", "red.jpg");
                 $("div#valItem4Div span").text("Fail, Acceptable Special Characters. ");
                 $("div#valItem4Div").attr("data-status", "1");
+                $("#stateannounce p").empty();
             } else if (ddd == false && $("div#valItem4Div").attr("data-status") != "2") {
                 $("div#valItem4Div img").attr("alt", "Pass, Acceptable Special Characters. ");
                 $("div#valItem4Div img").attr("src", "green.jpg");
                 $("div#valItem4Div span").text("Pass, Acceptable Special Characters. ");
                 $("div#valItem4Div").attr("data-status", "2");
+                $("#stateannounce2 p").empty();
             }
 
             //check 5 - no spaces
@@ -67,17 +75,19 @@
                 $("div#valItem5Div img").attr("src", "red.jpg");
                 $("div#valItem5Div span").text("Fail, No Spaces Allowed. ");
                 $("div#valItem5Div").attr("data-status", "1");
+                $("#stateannounce p").empty();
             } else if (eee == false && $("div#valItem5Div").attr("data-status") != "2") {
                 $("div#valItem5Div img").attr("alt", "Pass, No Spaces Allowed. ");
                 $("div#valItem5Div img").attr("src", "green.jpg");
                 $("div#valItem5Div span").text("Pass, No Spaces Allowed. ");
                 $("div#valItem5Div").attr("data-status", "2");
+                $("#stateannounce2 p").empty();
             }
             //comprehensive state
             var howmany = $('div[data-status="2"]').not("div#valItemCompDiv").length;
 
             if (howmany < 5 && $("div#valItemCompDiv").attr("data-status") != "1") {
-                $("div#valItemCompDiv img").attr("alt", "Fail, Username Is Valid. ");
+                $("div#valItemCompDiv img").attr("alt", "Fail, Username Is Invalid. ");
                 $("div#valItemCompDiv img").attr("src", "red.jpg");
                 $("input#saveUserID").prop("disabled", true);
                 $("div#valItemCompDiv").attr("data-status", "1");
